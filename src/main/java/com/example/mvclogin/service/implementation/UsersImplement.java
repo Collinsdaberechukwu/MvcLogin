@@ -1,5 +1,6 @@
 package com.example.mvclogin.service.implementation;
 
+import com.example.mvclogin.dto.LoginDto;
 import com.example.mvclogin.entity.Users;
 import com.example.mvclogin.repository.UserRepo;
 import com.example.mvclogin.service.UserService;
@@ -17,5 +18,15 @@ public class UsersImplement implements UserService {
     @Override
     public Users loginAccount(Users users) {
       return userRepo.save(loginAccount(users));
+    }
+
+    @Override
+    public Users add(LoginDto loginDto) {
+      return userRepo.save(add(loginDto));
+    }
+
+    @Override
+    public Users findByEmail(String email) {
+       return userRepo.findByEmail(email);
     }
 }
